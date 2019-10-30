@@ -2,6 +2,11 @@ var express = require('express');
 var app = express();
 const path = require('path');
 
+var cors = require('cors'); //HTTP access control (CORS) for cross origin requests
+
+app.use(cors()); //Setup cors
+
+
 app.get('/',function(req,res){
  res.sendFile(path.join(__dirname+'/index.html'));
   //__dirname : Ritorna la cartella del progetto
